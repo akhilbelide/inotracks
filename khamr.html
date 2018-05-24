@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple languages</title>
+  
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+  
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+  var arrLang={
+    'en':{
+	   'hello' : 'Home',
+	   'about' : 'About',
+	   'news' : 'News',
+	   'contact' : 'Contact Us',
+	   'frst' : 'Hello everyone!',
+	   'secnd' : 'Some Content......',
+	   'jj' : ' MS Dhoni, superstar cricketer and captain of the IPL team, Chennai Super Kings (CSK) is riding the popularity wave with his team just having entered the IPL 2018 finals after the nail-biting defeat of Sunrisers Hyderabad. Shane Watson, the Chennai Super Kings (CSK) all-rounder, in a recent press conference before their match against Sunrisers Hyderabad, had high praise for Captain Cool, MS Dhoni. “Just his feel and intuition for the game, I’ve experienced that with a few incredible players I’ve played with, MS is certainly right up there,” said Watson. And while the cricket star has been travelling extensively across India and internationally for T20 and IPL 2018 matches, it’s not a secret that MS Dhoni is immensely fond of his birthplace Ranchi in Jharkhand. That’s perhaps why the cricketer has built his dream home — his biggest house yet — in Ranchi. '
+      },
+	  'fr' :{
+	     'hello' : ' नमस्ते ',
+	   'about' : ' के  बारे  में ',
+	   'contact' : '  संपर्क  करें ',
+	   'news' : ' समाचार ',
+	   'frst' : '  सभी  को  नमस्कार ',
+	   'secnd' : ' कुछ  सामग्री....... ',
+	   'jj' : ' आईपीएल टीम के सुपरस्टार क्रिकेटर और कप्तान एमएस धोनी चेन्नई सुपर किंग्स (सीएसके) सनराइजर्स हैदराबाद की नाखून-विरोधी हार के बाद आईपीएल 2018 के फाइनल में प्रवेश कर अपनी टीम के साथ लोकप्रियता की लहर पर सवारी कर रहे हैं। चेन्नई सुपर किंग्स (सीएसके) ऑलराउंडर शेन वाटसन ने सनराइजर्स हैदराबाद के खिलाफ अपने मैच से पहले हालिया प्रेस कॉन्फ्रेंस में कप्तान कूल, एमएस धोनी की प्रशंसा की थी। वॉटसन ने कहा, "सिर्फ खेल के लिए उनका अनुभव और अंतर्ज्ञान, मैंने अनुभव किया है कि मैंने कुछ अविश्वसनीय खिलाड़ियों के साथ खेला है, एमएस निश्चित रूप से वहां सही है।" और जब क्रिकेट स्टार भारत भर में और टी -20 और आईपीएल 2018 मैचों के लिए अंतरराष्ट्रीय स्तर पर यात्रा कर रहा है, तो यह एक रहस्य नहीं है कि एमएस धोनी झारखंड में अपने जन्मस्थल रांची के बेहद शौकीन हैं। शायद यही कारण है कि क्रिकेट खिलाड़ी ने अपना सपना घर बनाया है - अभी तक उसका सबसे बड़ा घर - रांची में। '
+      }
+	   
+  };
+  $(function(){
+    $('.translate').click(function(){
+	var lang=$(this).attr('id');
+	
+	$('.lang').each(function(index,element){
+	$(this).text(arrLang[lang][$(this).attr('key')]);
+	});
+	});
+	});
+  
+  </script>
+</head>
+<body>
+   <button class="translate" id="en">English</button>
+   <button class="translate" id="fr">Hindi</button>
+   <div class="topnav">
+  <a class="active" href="#home" class="lang" key="hello">Home</a>
+  <a href="#news" class="lang" key="news">News</a>
+  <a href="#contact" class="lang" key="contact">Contact</a>
+  <a href="#about" class="lang" key="about">About</a>
+</div>
+
+<div style="padding-left:16px">
+  
+  <p class="lang" key="secnd">Some content..</p>
+</div>
+   
+   <ul>
+     <li class="lang" key="hello">Hello</li>
+	  <li class="lang" key="about">About</li>
+	   <li class="lang" key="contact">Contact us</li>
+	 </ul>
+	 <p class="lang" key="frst">Hello everyone!</p>
+	 <p class="lang" key="jj">MS Dhoni, superstar cricketer and captain of the IPL team, Chennai Super Kings (CSK) is riding the popularity wave with his team just having entered the IPL 2018 finals after the nail-biting defeat of Sunrisers Hyderabad. Shane Watson, the Chennai Super Kings (CSK) all-rounder, in a recent press conference before their match against Sunrisers Hyderabad, had high praise for Captain Cool, MS Dhoni. “Just his feel and intuition for the game, I’ve experienced that with a few incredible players I’ve played with, MS is certainly right up there,” said Watson. And while the cricket star has been travelling extensively across India and internationally for T20 and IPL 2018 matches, it’s not a secret that MS Dhoni is immensely fond of his birthplace Ranchi in Jharkhand. That’s perhaps why the cricketer has built his dream home — his biggest house yet — in Ranchi.</p>
+</body>
+</html>
